@@ -1,0 +1,25 @@
+[package]
+name = "epd-gooddisplay"
+authors = ["AmnesiaBeing <727184139@qq.com>"]
+categories = ["embedded", "hardware-support", "no-std"]
+description = "An embedded-hal based driver for SPI e-paper displays from Dalian Good Display."
+keywords = ["ePaper", "Display", "epd", "eink"]
+readme = "README.md"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+embedded-graphics = { version = "0.6.1", optional = true}
+embedded-hal = {version = "0.2.4"}
+bit_field = "0.10.1"
+
+[dev-dependencies]
+linux-embedded-hal = "0.3"
+embedded-hal-mock = "0.7"
+
+[features]
+default = ["graphics","use_hardware_spi_nss"]
+
+graphics = ["embedded-graphics"]
+
+use_hardware_spi_nss = []
